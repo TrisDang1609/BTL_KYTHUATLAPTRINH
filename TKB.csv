@@ -1,0 +1,215 @@
+ID Class,Course ID,Name,Day of Weeks,Time,Place
+140888,ET3250,Digital Communications,2,1505-1730,D6-102
+140889,ET3240,Analog Electronics II,2,1230-1455,D6-102
+140890,ET3300,Microprocessors,3,1230-1455,D6-102
+140891,ET2022,Technical Writing and Presentation,3,1505-1645,D6-102
+140891,ET2022,Technical Writing and Presentation,5,1230-1400,D6-102
+140928,ET3901,Wireless Communications,6,0920-1145,D6-104
+140964,ET2014,Electronic Engineering,6,1015-1145,D8-302
+140996,ET3250E,Fundamentals of Communication Systems,6,0825-1145,D8-402
+141041,ET3220E,Digital Electronics,2,0645-1005,D8-106
+141042,ET3230E,Analog Electronic,s I5,0825-1145,D8-106
+141043,ET3280E,Antenna and Waves,2,1015-1145,D8-106
+141043,ET3280E,Antenna and Waves,5,0645-0815,D8-106
+141044,ET4020E,Digital Signal Processing,4,0920-1145,D8-402
+141045,ET4080E,Fundamentals of Network Engineering,6,0645-1005,D6-206
+141046,ET4111E,Biomedical Measurement,2,0645-0910,D6-206
+141047,ET4570E,Digital Biosignal Processing,2,0920-1145,D6-206
+141048,ET4230E,Computer Networks,3,0920-1145,D6-206
+141049,ET4248E,Machine Learning for Biomedical Applications,5,0645-1005,D6-206
+141050,ET3168E,Statistical methods for biomedical engineering,3,0730-0910,D6-206
+141050,ET3168E,Statistical methods for biomedical engineering,5,1015-1145,D6-206
+141051,ET4216E,BME Design III,6,1015-1145,D6-206
+141052,ET3311,Information security,2,1410-1730,D8-304
+141053,ET4032,Analog IC design,4,1230-1455,D8-304
+141054,ET4231,Computer networks and IoT,4,1505-1730,D8-304
+141055,ET4260,Project in Multimedia,2,1230-1400,D8-304
+141056,ET4292,Embedded opreating systemss,6,1505-1730,D8-304
+141057,ET4361,Embedded system and interface,6,1230-1455,D8-304
+141058,ET2022,Technical Writing and Presentation,3,1410-1730,D8-302
+141059,ET4245,AI and Applications,5,1410-1730,D6-106
+141078,ET2012,Electronic Engineering,6,1410-1550,D8-302
+141079,ET2012,Electronic Engineering,6,1600-1730,D8-208
+141108,ET2031E,C/C++ Programming Language,3,0920-1145,D8-206
+141109,ET2060E,Signals and Systems,4,1230-1550,D8-206
+141110,ET2040E,Semiconductor Devices,5,1410-1730,D8-208
+141111,ET2050E,Circuit Theory,6,1505-1730,D8-402
+141112,ET2072E,Information Theory,5,1230-1400,D8-202
+141113,ET3210E,Electromagnetic Field Theory,6,1230-1455,D8-402
+141114,ET3260E,Applied Software engineering,2,1230-1455,D6-205
+141115,ET2105E,Data Structures and Algorithms,2,1505-1730,D6-205
+141116,ET4262E,Multimedia data compression and coding,6,1230-1455,D6-302
+141117,ET3250E,Fundamentals of Communication Systems,4,1230-1400,D8-403
+141117,ET3250E,Fundamentals of Communication Systems,6,1505-1645,D6-302
+141118,ET4730E,Computer graphics,3,0645-0910,D6-107
+141121,ET3302E,Microprocessors,2,1410-1730,D8-202
+141122,ET3221E,Digital Electronics,4,0645-0910,D6-103
+141123,ET2041E,Electronic Devices,6,1505-1730,D6-303
+141124,ET2050E,Circuit Theory,6,1230-1455,D6-303
+141125,ET3046E,Biomechanics,5,1230-1455,D6-303
+141168,ET2050,Circuit Theory,5,0920-1145,D8-304
+141169,ET2060,Signals and Systems,3,0645-1005,D8-208
+141170,ET2072,Information Theory,3,1015-1145,D8-208
+141171,ET2100,Data Structure and Algorithms,4,0645-0910,D8-302
+141172,ET3220,Digital Electronics,4,0920-1145,D8-302
+141387,ET2012,Electronic Engineering,3,0825-1005,TC-209
+141388,ET2012,Electronic Engineering,3,1015-1145,TC-210
+141389,ET2012,Electronic Engineering,3,0645-0815,TC-211
+141566,ET2012,Electronic Engineering,4,1230-1400,D8-503
+141567,ET2012,Electronic Engineering,4,1410-1550,D8-503
+141568,ET2012,Electronic Engineering,4,1600-1730,D8-408
+141658,ET2010,Electronic Engineering,4,1230-1455,D8-505
+141659,ET2010,Electronic Engineering,4,1505-1730,D8-505
+141660,ET2010,Electronic Engineering,2,1230-1455,D8-408
+141661,ET2010,Electronic Engineering,2,1505-1730,D8-408
+141987,ET2040,Electronic Devices,3,1230-1455,D7-203
+141988,ET2040,Electronic Devices,3,1505-1730,D7-204
+141989,ET2040,Electronic Devices,6,1230-1455,D7-403
+141990,ET2040,Electronic Devices,6,1505-1730,D7-404
+141991,ET2040,Electronic Devices,2,1230-1455,D7-202
+141992,ET2040,Electronic Devices,2,1505-1730,D7-203
+141993,ET2050,Circuit Theory,3,1505-1730,D7-203
+141994,ET2050,Circuit Theory,3,1230-1455,D7-204
+141995,ET2050,Circuit Theory,6,1505-1730,D7-403
+141996,ET2050,Circuit Theory,6,1230-1455,D7-404
+141997,ET2050,Circuit Theory,2,1505-1730,D7-202
+141998,ET2050,Circuit Theory,2,1230-1455,D7-203
+141999,ET2050,Circuit Theory,2,1505-1730,D7-204
+142000,ET2060,Signals and Systems,4,1230-1550,D7-201
+142001,ET2060,Signals and Systems,4,1600-1730,D7-201
+142001,ET2060,Signals and Systems,6,1230-1400,D7-203
+142002,ET2060,Signals and Systems,6,1410-1730,D7-203
+142003,ET2060,Signals and Systems,3,0645-0815,D7-204
+142003,ET2060,Signals and Systems,5,1015-1145,D9-506
+142004,ET2060,Signals and Systems,5,0645-1005,D9-506
+142005,ET3210,Electromagnetic Fields,6,1230-1455,D7-204
+142006,ET3210,Electromagnetic Fields,6,1505-1730,D7-204
+142007,ET3210,Electromagnetic Fields,3,1230-1455,D7-404
+142008,ET3210,Electromagnetic Fields,3,1505-1730,D7-404
+142009,ET3210,Electromagnetic Fields,2,1230-1455,D7-204
+142010,ET2072,Information Theory,5,1230-1400,D7-202
+142011,ET2072,Information Theory,5,1410-1550,D7-202
+142012,ET2072,Information Theory,5,1600-1730,D7-202
+142013,ET2072,Information Theory,3,1230-1400,D8-408
+142017,ET2100,Data Structure and Algorithms,4,0920-1145,TC-307
+142018,ET2100,Data Structure and Algorithms,4,0645-0910,TC-307
+142019,ET2100,Data Structure and Algorithms,2,0645-0910,TC-307
+142020,ET2100,Data Structure and Algorithms,2,0920-1145,TC-307
+142021,ET2100,Data Structure and Algorithms,6,0645-0910,TC-212
+142022,ET2100,Data Structure and Algorithms,6,0920-1145,TC-212
+142025,ET2031,C/C++ Programming Language,2,0920-1145,D7-307
+142027,ET2080,Fundamentals of Measurement,3,1230-1400,D9-205
+142028,ET2080,Fundamentals of Measurement,3,1410-1550,D9-205
+142029,ET2080,Fundamentals of Measurement,3,1600-1730,D9-205
+142030,ET2080,Fundamentals of Measurement,6,1230-1400,D9-205
+142031,ET2080,Fundamentals of Measurement,6,1410-1550,D9-205
+142032,ET2080,Fundamentals of Measurement,6,1600-1730,D9-205
+142033,ET2080,Fundamentals of Measurement,6,1015-1145,D9-305
+142034,ET3241,Analog Electronics II,3,1230-1400,D9-206
+142035,ET3241,Analog Electronics II,3,1410-1550,D9-206
+142036,ET3241,Analog Electronics II,3,1600-1730,D9-206
+142037,ET3241,Analog Electronics II,6,1230-1400,D9-206
+142038,ET3241,Analog Electronics II,6,1410-1550,D9-206
+142039,ET3241,Analog Electronics II,6,1600-1730,D9-206
+142040,ET3250,Digital Communications,4,1230-1455,D9-304
+142041,ET3250,Digital Communications,4,1505-1730,D9-304
+142042,ET3250,Digital Communications,5,1230-1455,D7-203
+142043,ET3250,Digital Communications,5,1505-1730,D7-204
+142044,ET3250,Digital Communications,5,1230-1455,D8-206
+142045,ET3250,Digital Communications,5,1505-1730,D8-206
+142046,ET3300,Microprocessors,3,1230-1455,D7-403
+142047,ET3300,Microprocessors,3,1505-1730,D7-403
+142048,ET3300,Microprocessors,2,1230-1455,D7-403
+142049,ET3300,Microprocessors,2,1505-1730,D7-404
+142050,ET3300,Microprocessors,4,1230-1455,D7-202
+142051,ET3300,Microprocessors,4,1505-1730,D7-202
+142052,ET3310,Theory of Cryptography,3,0645-0910,D7-307
+142053,ET3310,Theory of Cryptography,6,1230-1455,D9-304
+142054,ET3310,Theory of Cryptography,6,1505-1730,D9-304
+142055,ET4020,Digital Signal Processing,5,1230-1455,D7-204
+142056,ET4020,Digital Signal Processing,5,1505-1730,D7-203
+142057,ET4020,Digital Signal Processing,2,1230-1455,D7-404
+142058,ET4020,Digital Signal Processing,2,1505-1730,D7-403
+142059,ET3220,Digital Electronics,5,0645-0910,D9-303
+142060,ET3220,Digital Electronics,5,0920-1145,D9-304
+142061,ET3230,Analog Electronics I,3,0920-1145,D7-405
+142062,ET3230,Analog Electronics I,3,0920-1145,D7-405
+142063,ET3260,Applied Software Engineering,5,0645-0910,D9-304
+142064,ET3260,Applied Software Engineering,5,0920-1145,D9-303
+142065,ET3260,Applied Software Engineering,3,0645-0910,D7-405
+142066,ET3280,Antenna and Wave Transmission,6,0645-0815,D9-305
+142067,ET3280,Antenna and Wave Transmission,6,0825-1005,D9-305
+142068,ET2022,Technical Writing and Presentation,2,0645-1005,D9-505
+142069,ET2022,Technical Writing and Presentation,2,1015-1145,D9-505
+142069,ET2022,Technical Writing and Presentation,6,0645-0815,D9-505
+142070,ET2022,Technical Writing and Presentation,6,0825-1145,D9-505
+142071,ET2022,Technical Writing and Presentation,2,0645-1005,D9-506
+142072,ET2022,Technical Writing and Presentation,2,1015-1145,D9-506
+142072,ET2022,Technical Writing and Presentation,6,0645-0815,D9-506
+142073,ET2022,Technical Writing and Presentation,6,0825-1145,D9-506
+142074,ET2022,Technical Writing and Presentation,3,1410-1730,D7-405
+142075,ET4245,AI and Applications,3,0645-1005,D3-402
+142076,ET4245,AI and Applications,3,1015-1145,D3-403
+142076,ET4245,AI and Applications,5,1015-1145,D3-403
+142077,ET4245,AI and Applications,5,0645-1005,D3-402
+142078,ET3180,Wireless Communications,4,0920-1145,D7-405
+142079,ET4430,Advanced Programming,2,0645-0910,D3-402
+142080,ET4430,Advanced Programming,2,0920-1145,D3-403
+142081,ET4430,Advanced Programming,4,0645-0910,D7-405
+142082,ET4060,Object-Oriented Analysis and Design,3,0645-1005,D3-403
+142083,ET4060,Object-Oriented Analysis and Design,5,0645-1005,D3-403
+142084,ET4060,Object-Oriented Analysis and Design,3,1015-1145,D3-402
+142084,ET4060,Object-Oriented Analysis and Design,5,1015-1145,D3-402
+142085,ET4330,Mobile Communications,2,0920-1145,D3-402
+142086,ET4330,Mobile Communications,2,0645-0910,D3-403
+142087,ET4361,Embedded system and interface,4,0645-0910,D9-504
+142088,ET4361,Embedded system and interface,6,0920-1145,D3-402
+142089,ET4361,Embedded system and interface,6,0645-0910,D3-402
+142090,ET4041,Computer Architecture,6,0645-0815,D3-403
+142091,ET4041,Computer Architecture,6,0825-1005,D3-403
+142092,ET4041,Computer Architecture,6,1015-1145,D3-403
+142093,ET4340,VLSI Design,4,0645-1005,D9-206
+142094,ET4380,Satellite Communications,5,0645-0910,D8-304
+142095,ET4070,Fundamentals of Data Communication,4,0645-0910,D9-205
+142096,ET4070,Fundamentals of Data Communication,4,0920-1145,D9-205
+142097,ET4710,Mobile Application programming,4,1230-1455,D9-102
+142098,ET4710,Mobile Application programming,4,1505-1730,D9-103
+142099,ET4591,Digital Image Processing,4,1230-1455,D9-103
+142100,ET4591,Digital Image Processing,4,1505-1730,D9-102
+142101,ET4250,Telecommunications Systems,5,1230-1550,D9-102
+142102,ET4250,Telecommunications Systems,6,1230-1550,D9-103
+142103,ET4291,Operating Systems,5,1230-1550,D9-103
+142104,ET4291,Operating Systems,6,1230-1550,D9-102
+142105,ET4230,Computer Networks,3,1505-1730,D9-103
+142106,ET4230,Computer Networks,3,1230-1455,D9-102
+142107,ET4550,Radiation and Electrical Safety in Medicine,6,1505-1730,D9-305
+142109,ET4571,Biomedical signal processing,3,1505-1645,D7-505
+142110,ET4611,Power electronics,3,1230-1455,D7-505
+142111,ET4031,Digital System Design and Synthesis,6,1230-1455,D7-505
+142112,ET4032,Analog IC design,6,1505-1730,D7-505
+142113,ET4092,Microwave engineering,3,1230-1455,D9-103
+142114,ET4081,Communication Networks,6,1410-1550,D7-405
+142115,ET4081,Communication Networks,6,1600-1730,D7-405
+142116,ET4411,Telecom Network Planning and Management,2,1505-1730,D9-304
+142117,ET4311,Optical Fiber Communication,3,1505-1730,D9-102
+142118,ET5270,Remote Sensing and GIS,3,1230-1550,D7-306
+142119,ET4151,Aeronautical communication network,2,1505-1730,D7-205
+142120,ET5260,Satellite Navigation,5,1230-1550,D7-205
+142121,ET3262,Technology and technical design thinking,2,1230-1455,TC-213
+142122,ET3262,Technology and technical design thinking,2,1505-1730,TC-213
+142123,ET3262,Technology and technical design thinking,4,1230-1455,TC-213
+142124,ET3262,Technology and technical design thinking,4,1505-1730,TC-213
+142125,ET3262,Technology and technical design thinking,6,1230-1455,TC-213
+142126,ET3262,Technology and technical design thinking,6,1505-1730,TC-213
+142127,ET3262,Technology and technical design thinking,5,1230-1455,D9-507
+142128,ET3262,Technology and technical design thinking,5,1505-1730,D9-507
+142129,ET3262,Technology and technical design thinking,3,0645-0910,TC-213
+142130,ET3262,Technology and technical design thinking,3,0920-1145,TC-213
+142131,ET3262,Technology and technical design thinking,5,0645-0910,TC-213
+142132,ET3262,Technology and technical design thinking,5,0920-1145,TC-213
+142133,ET3262,Technology and technical design thinking,2,0645-0910,D9-507
+142134,ET3262,Technology and technical design thinking,2,0920-1145,D9-507
+142328,ET2010,Electronic Engineering,4,0645-0910,D5-404
+142329,ET2010,Electronic Engineering,4,0920-1145,D5-403
+140802,ET2031E,C/C++ Programming Language,2,0920-1145,D5-202
+140803,ET1016E,Introduction to Biomedical Engineering,3,1230-1455,D5-102
