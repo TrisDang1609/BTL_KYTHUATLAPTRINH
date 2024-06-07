@@ -19,12 +19,13 @@ class SubjectTable{
         string DayOfWeek;
         string Time;
         string Place;
+        string TeacherName;
         bool status = false;
         int linkToTeacher = -1;
 
     public:
         SubjectTable(){}
-        SubjectTable(string _IDClass, string _CourseID, string _Name, string _DayOfWeek, string _Time, string _Place) : IDClass(_IDClass), CourseID(_CourseID), Name(_Name), DayOfWeek(_DayOfWeek), Time(_Time), Place(_Place){}
+        SubjectTable(string _IDClass, string _CourseID, string _Name, string _DayOfWeek, string _Time, string _Place,string _TeacherName) : IDClass(_IDClass), CourseID(_CourseID), Name(_Name), DayOfWeek(_DayOfWeek), Time(_Time), Place(_Place),TeacherName(_TeacherName){}
         void addSubject();
         void delSubject();
         void editSubject();
@@ -49,6 +50,9 @@ class SubjectTable{
         void setPlace(string _Place){
             Place = _Place;
         }
+        void setTeacherName(string _TeacherName){
+            TeacherName = _TeacherName;
+        }
         
         string getID(){
             return IDClass;
@@ -62,6 +66,13 @@ class SubjectTable{
         string getDayOfWeek(){
             return DayOfWeek;
         }
+        string getPlace(){
+            return Place;
+        }
+        string getTeacherName(){
+            return TeacherName;
+        }
+
         void setLink(int i){
             linkToTeacher = i;
         }
@@ -87,14 +98,14 @@ void SubjectTable::readData() {
     }
 
     string header, line;
-    string _IDClass, _CourseID, _Name, _DayOfWeek, _Time, _Place;
+    string _IDClass, _CourseID, _Name, _DayOfWeek, _Time, _Place, _TeacherName;
     getline(file, header); // Đọc dòng tiêu đề
 
     while (getline(file, line)) {
         stringstream str(line);
         if (getline(str, _IDClass, ',') && getline(str, _CourseID, ',') && getline(str, _Name, ',') && 
-            getline(str, _DayOfWeek, ',') && getline(str, _Time, ',') && getline(str, _Place, ',') ) {
-            listSubject.push_back(SubjectTable(_IDClass, _CourseID, _Name, _DayOfWeek, _Time, _Place));
+            getline(str, _DayOfWeek, ',') && getline(str, _Time, ',') && getline(str, _Place, ',') && getline(str, _TeacherName, ',')) {
+            listSubject.push_back(SubjectTable(_IDClass, _CourseID, _Name, _DayOfWeek, _Time, _Place,_TeacherName));
         } else {
             cerr << "Loi dinh dang o vong: " << line << endl;
         }
