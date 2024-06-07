@@ -82,6 +82,9 @@ public:
     void setDefaultSchedule(){
         schedule.setDefaultDay();
     }
+    string getName(){
+        return name;
+    }
     string getSubject1(){
         return subject1;
     } 
@@ -128,4 +131,4 @@ void Teacher::showTeacher(){
         cout << "Mon day: " << listTeacher[i].subject2 << endl;
     }
 }
-#endif
+#endif // GIAOVIEN_H
