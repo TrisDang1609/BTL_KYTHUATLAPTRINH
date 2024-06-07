@@ -94,6 +94,8 @@ void advancedSort(Teacher gv, SubjectTable sb){
                     listSubject[i].setLink(j);
                     listTeacher[j].setLink(i);
                     listSubject[i].setStatus(true);
+                    listSubject[i].setTeacherName(listTeacher[j].getName());
+                    
                     break;
                }
           }
