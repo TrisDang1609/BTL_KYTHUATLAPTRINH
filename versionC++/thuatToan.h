@@ -1,0 +1,103 @@
+/*
+Trình bày cho ae nghe một chút về tư tưởng của thuật toán lần này:
+Nó sort rất đơn giản theo đúng tiêu chỉ thoả mãn về năng lực và thời gian thì nhận, thế thôi 
+bạn sẽ đi kiểm tra các yếu tố trong hàm checkFree, kết quả của hàm sẽ là nhận 
+khi nhận rồi thì bạn sẽ làm một vài điểu sau để thể hiện là chốt cô này với môn này nhé:
+1. setBusy cho giáo viên -- mục tiêu là tránh có môn khác trùng tên lại nhảy vào
+2. getLink cho giáo viên và môn học -- mục tiêu là để biết được giáo viên nào dạy môn nào và môn nào được dạy bởi giáo viên nào
+3. setStatus cho môn học -- mục tiêu là để biết được môn học này đã được chốt chưa _ cái này thì phục vụ cho việc xuất ra bên ngoài của khánh
+
+
+Chứng minh tính đúng đắn của thuật toán:
+thì thực ra hầu hết các nội dung đều khá là tuyến tính và không có nhiều điều kiện ràng buộc và quy chuẩn phải chính xác 100% nên là bạn sẽ nói về các 
+trường hợp và cách mà thuật toán xư lý với nó
+1. khi mà rảnh và có năng lực: nhận :)) 
+2. khi mà các yếu tố có năng lực và rảnh không thoả mãn thì nó sẽ bỏ qua, do mình xử lý bài toán dưới dạng duyệt trâu (buffalo search) nên nó sẽ xét tất cả các cặp
+giáo viên - môn học khác có thể xảy ra nên nó sẽ tự động tìm các ứng viên tiềm năng khác 
+nên là yên tâm nó bao trọn 100% các trường hợp có năng lực và tốt theo đúng thứ tự 
+3. kết quả có tốt hơn được không thì không thể vì thời gian là đã cố định sẵn, cho dù có dồn như nào thì vấn đề nhân lực là thực tế khó cách rời được
+4. khi mà không thể nào thoả mãn được (ví dụ 1 thời điểml, 2 giáo viên, 3 môn học) thì có cố gắng tối ưu đến mấy cũng chịu thôi! :()
+*/
+
+/*
+LƯU Ý: THUẬT TOÁN SẼ CẦN PHẢI CHẠY LẠI ĐỂ TỐI ƯU NẾU CÓ SỰ TINH CHỈNH VỀ CÁC DỮ LIỆU GIÁO VIÊN VÀ MÔN HỌC
+*/
+
+#include<iostream>
+#include"subject.h"
+#include"giaovien.h"
+#include<string>
+#include<vector>
+#include<sstream>
+#include<fstream>
+using namespace std;
+int compare(string s){
+     /*
+     Giải thích cho ae một chút về việc quy đổi các giá trị giờ sang số này nhé:
+     thứ nhất thì do bạn quy ước cái tiết của giáo viên là số và ở dưới dạng status là 0-1 cho nên không thể nào dùng string của định để giải quyết được 
+     cho nên bạn phải convert cái giờ ấy sao cho tương đương với cái quy ước 12 tiết kia
+     thứ hai là do cái giờ của bạn không đồng đều, vì có những khoảng nghỉ giữa giờ ấy. tuy nhiên thì giáo viên sẽ được phân công tiết này hay tiết kia thôi cho nên là 
+     bạn sẽ kéo nó xuống
+     */
+     if(s == "0645") return 1;
+     if(s == "0730") return 2;
+     if(s == "0815" || s == "0825") return 3;
+     if(s == "0910" || s == "0920") return 4;
+     if(s == "1005" || s == "1015") return 5;
+     if(s == "1100") return 6;
+     if(s =="1145" || s == "1230") return 7;
+     if(s == "1315") return 8;
+     if(s == "1400" || s == "1410") return 9;
+     if(s == "1455" || s == "1505") return 10;
+     if(s == "1550" || s == "1600") return 11;
+     if(s == "1645") return 12;
+     if(s == "1730") return 13;
+     return 0; // không bao giờ xảy ra nhưng mình không ghi vào thì nó lỗi cho nên cứ ghi bừa là 0 vào nhé :))
+}
+int convertStringToInt(string s){
+     return (int)(s[0] - '0'); // cái này đơn giản '1' - '0' = (00000001)_quy ước ascii và chuyển sang int thì thành 1 
+}
+// các giá trị điểm đầu phù hợp, kết thúc và ngày trong tuần dùng khá nhiều mà nó lại tính toán mất thời gian nên bạn
+// xây dựng biến cục bộ xử lý vấn để cho nó đơn giản
+int _start, _end, _day; 
+ // cái này đơn giản là kiểm chứng xem tại thời giểm của môn này thì cô giáo có năng lực chuyên môn của môn ấy có rảnh không
+bool checkFree(Teacher a, SubjectTable b){
+     // kiểm tra xem cô có phải là giáo viên của môn này không
+     if((a.getSubject1() == b.getName()) || (a.getSubject2() == b.getName())){ 
+          // hai cái này để lấy cái đoạn giờ phút mã hoá là 0645, 0730, 0815, 0825, 0910, 0920, 1005, 
+          //1015, 1100, 1145, 1230, 1315, 1400, 1410, 1455, 1505, 1550, 1600, 1645, 1730
+          string cut1 = "", cut2 = "";
+          string c = b.getTime();
+          for (int i = 0; i <= 3; i++) cut1 = cut1 + c[i];
+          for (int i = 5; i <= 8; i++) cut2 = cut2 + c[i];
+          //cout << cut1 << " " << cut2 << endl;
+          _start = compare(cut1);
+          _end = compare(cut2) - 1;
+          _day = convertStringToInt(b.getDayOfWeek());
+          cout << _start << " " << _end << " " << _day << endl;
+          if(a.checkBusy(_start, _end, _day)){
+               a.setBusy(_start, _end, _day);
+               return true;
+          }
+     };
+     return false;  // false thì nó sẽ bỏ qua cô này tìm cô khác nhé 
+}
+
+void advancedSort(Teacher gv, SubjectTable sb){
+     for (int i = 0; i < listSubject.size(); i++) listSubject[i].setStatus(false); // reset trạng thái môn học mỗi khi chạy sort_ đọc lưu ý bên trên là hiểu
+     for (int i = 0; i < listSubject.size(); i++)
+     {
+          for (int j = 0; j < listTeacher.size(); j++)
+          {
+               if (checkFree(listTeacher[j], listSubject[i]))
+               {
+                    listSubject[i].setLink(j);
+                    listTeacher[j].setLink(i);
+                    listSubject[i].setStatus(true);
+                    listSubject[i].setTeacherName(listTeacher[j].getName());
+                    
+                    break;
+               }
+          }
+     }
+}
