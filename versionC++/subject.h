@@ -72,6 +72,10 @@ class SubjectTable{
         string getTeacherName(){
             return TeacherName;
         }
+        string getCourseID(){
+            return CourseID;
+        }
+        
 
         void setLink(int i){
             linkToTeacher = i;
@@ -118,7 +122,7 @@ void SubjectTable::showSubject(){
 	printf("| %-8s | %-12s | %-50s | %-8s | %-20s | %-18s |\n", "Ma lop", "Ma hoc phan", "Ten mon hoc", "Thu", "Thoi gian", "Dia diem hoc");
 	printf("+----------+--------------+----------------------------------------------------+----------+----------------------+--------------------+\n");
 	for(int i=0; i<listSubject.size(); i++){
-		printf("| %-8s | %-12s | %-50s | %-8s | %-20s | %-18s |\n", listSubject[i].IDClass.c_str(), listSubject[i].CourseID.c_str(), listSubject[i].Name.c_str(), listSubject[i].DayOfWeek.c_str(), listSubject[i].Time.c_str(), listSubject[i].Place.c_str());
+		printf("| %-8s | %-12s | %-50s | %-8s | %-20s | %-18s | %-18s |\n", listSubject[i].IDClass.c_str(), listSubject[i].CourseID.c_str(), listSubject[i].Name.c_str(), listSubject[i].DayOfWeek.c_str(), listSubject[i].Time.c_str(), listSubject[i].Place.c_str(),listSubject[i].TeacherName.c_str());
 	}
 	printf("+----------+--------------+----------------------------------------------------+----------+----------------------+--------------------+\n");
 }
