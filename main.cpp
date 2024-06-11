@@ -15,7 +15,7 @@ void ShowFullSchedule(Teacher gv, SubjectTable sb) //Xuat ra tat ca thoi khoa bi
     for(int i=0; i<listSubject.size(); i++){
         cout<<"|"<<listSubject[i].getID()<<setw(6)<<"| "<<listSubject[i].getCourseID()<<setw(14-listSubject[i].getCourseID().size())<<"|"<<listSubject[i].getName()<<setw(47-listSubject[i].getName().size())<<"|"<<setw(5)<<listSubject[i].getDayOfWeek()<<setw(6)<<"|"<<setw(15)<<listSubject[i].getTime()<<setw(8)<<"|"<<setw(7)<<listSubject[i].getPlace()<<setw(15)<<"|"<<listSubject[i].getTeacherName()<<setw(24-listSubject[i].getTeacherName().size())<<"|"<<endl;
     }
-	cout<<"+----------+--------------+---------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
+	cout<<"+----------+--------------+----------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
 }
 
 void ShowWithTeacherName(Teacher gv, SubjectTable sb) //Xuat ra theo lua chon ten giao vien 
@@ -82,30 +82,40 @@ void ShowWithCourseID(Teacher gv, SubjectTable sb) //Xuat ra theo lua chon ma ho
   
 }
 
-//void
 
 
 
 int main(){
-    cout<<"checkpoint 1";
+    
     SubjectTable sb;
-    cout<<"checkpoint 2";
-    
     sb.readData();
-    cout<<"checkpoint 3";
-    //sb.showSubject();
     Teacher gv;
-    cout<<"checkpoint 4";
     gv.readData();
-    cout<<"checkpoint 5";
     advancedSort(gv, sb);
-    cout<<"checkpoint 6"<<endl;
-
-    
-    ShowFullSchedule(gv, sb);
-
-
-    cout<<"Test chuc nang";
-    cout << endl;
+    cout<<"PHAN CONG GIAO VIEN"<<endl;
+    cout<<"1. Xem toan bo thoi khoa bieu"<<endl;
+    cout<<"2. Xem theo ten giao vien"<<endl;
+    cout<<"3. Xem theo ngay trong tuan"<<endl;
+    cout<<"4. Xem theo ma hoc phan"<<endl;
+    cout<<"Chon lua chon: ";
+    int choice;
+    cin>>choice;
+    switch(choice){
+        case 1:
+            ShowFullSchedule(gv, sb);
+            break;
+        case 2:
+            ShowWithTeacherName(gv, sb);
+            break;
+        case 3:
+            ShowWithDayOfWeek(gv, sb);
+            break;
+        case 4:
+            ShowWithCourseID(gv, sb);
+            break;
+        default:
+            cout<<"Nhap lai lua chon"<<endl;
+            break;
+    }
 }
 
