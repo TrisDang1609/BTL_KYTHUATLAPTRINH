@@ -44,6 +44,16 @@ int main(){
                 if(!suadoithongtinmonhoc(choice1, sb)) break;;
             }
         }
+        else if(choice == 7){
+            cout << "Tien hanh sua duoi thong tin giao vien" << endl;
+            while(true){
+                showTeacherChoice();
+                int choice1;
+                cin >> choice1;
+                if(!suadoithongtingiaovien(choice1, gv)) break;;
+            }
+        }
+        
         else{
             cout << "LOI!!" << endl;
             cout<<"Xin moi nhap lai lua chon"<<endl;

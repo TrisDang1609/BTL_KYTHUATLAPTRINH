@@ -184,8 +184,10 @@ void show(){
     cout<<"4. Xem theo ma hoc phan"<<endl;
     cout << "5. Tien hanh sua doi thong tin mon hoc" << endl;
     cout << "6. Thoat khoi chuong trinh" << endl;
+    cout << "7. Tien hanh sua doi thong tin giao vien" << endl;
     cout<<"Chon lua chon: ";
 }
+
 
 void showSubjectChoice(){
     cout << "1. Tien hanh them mon hoc" << endl;
@@ -245,6 +247,27 @@ bool suadoithongtinmonhoc(int choice, SubjectTable sb){
                }
          }
          return true;
+    } else {
+        cout << "LOI!!" << endl;
+        cout<<"Xin moi nhap lai lua chon"<<endl;
+        return true;
+    }
+}
+
+void showTeacherChoice(){
+    cout << "1. Tien hanh them giao vien" << endl;
+    cout << "2. Tien hanh xoa giao vien" << endl;
+}
+
+bool suadoithongtingiaovien(int choice, Teacher gv){
+    if(choice == 1){
+        cout << "Tien hanh them giao vien:" << endl;
+        gv.addTeacher();
+        return true;
+    } else if(choice == 2){
+        cout << "Tien hanh xoa giao vien:" << endl;
+        gv.delTeacher();
+        return true;
     } else {
         cout << "LOI!!" << endl;
         cout<<"Xin moi nhap lai lua chon"<<endl;

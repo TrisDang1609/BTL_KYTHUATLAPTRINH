@@ -147,12 +147,19 @@ void SubjectTable::addSubject(){
 void SubjectTable::delSubject(){
     int delSubjectPos;
     cout << "Nhap vi tri mon hoc can xoa: ";
+    for (int i = 0; i < listSubject.size(); i++){
+        cout << i << " "<< listSubject[i].Name << endl;
+    }
     cin >> delSubjectPos;
     listSubject.erase(listSubject.begin() + delSubjectPos);
     cout << "Xoa mon hoc thanh cong!" << endl;
 }
 void SubjectTable::editSubject(){
     cout << "Nhap vi tri mon hoc can sua: ";
+    for (int i = 0; i < listSubject.size(); i++){
+        cout << i << " "<< listSubject[i].Name << endl;
+    }
+    
     int editSubjectPos;
     cin >> editSubjectPos;
     cout << "Nhap thong tin moi cua mon hoc theo form duoi day:" << endl;
