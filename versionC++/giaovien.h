@@ -65,7 +65,6 @@ public:
     void searchTeacher();
     void showTeacher();
     void readData();
-    void writeData();
     void sortByName();
     void setName(string _name){
         name = _name;
@@ -130,5 +129,35 @@ void Teacher::showTeacher(){
         cout << "Mon day: " << listTeacher[i].subject1 << endl;
         cout << "Mon day: " << listTeacher[i].subject2 << endl;
     }
+}
+void Teacher::addTeacher(){
+    string _name, _telNum, _subject1, _subject2;
+    cout << "Nhap ten giao vien: ";
+    cin.ignore();
+    getline(cin, _name);
+    cout << "Nhap so dien thoai: ";
+    cin >> _telNum;
+    cout << "Nhap mon day 1: ";
+    cin.ignore();
+    getline(cin, _subject1);
+    cout << "Nhap mon day 2: ";
+    getline(cin, _subject2);
+    listTeacher.push_back(Teacher(_name, _telNum, _subject1, _subject2));
+    listTeacher[listTeacher.size() - 1].setDefaultSchedule();
+    cout << "Them giao vien thanh cong!" << endl;
+} 
+void Teacher::delTeacher(){
+    string _name;
+    cout << "Nhap ten giao vien can xoa: ";
+    cin.ignore();
+    getline(cin, _name);
+    for(int i = 0; i < listTeacher.size(); i++){
+        if(listTeacher[i].name == _name){
+            listTeacher.erase(listTeacher.begin() + i);
+            cout << "Xoa giao vien thanh cong!" << endl;
+            return;
+        }
+    }
+    cout << "Khong tim thay giao vien!" << endl;
 }
 #endif // GIAOVIEN_H
