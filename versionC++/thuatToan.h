@@ -183,8 +183,8 @@ void show(){
     cout<<"3. Xem theo ngay trong tuan"<<endl;
     cout<<"4. Xem theo ma hoc phan"<<endl;
     cout << "5. Tien hanh sua doi thong tin mon hoc" << endl;
-    cout << "6. Thoat khoi chuong trinh" << endl;
-    cout << "7. Tien hanh sua doi thong tin giao vien" << endl;
+    cout << "6. Tien hanh sua doi thong tin giao vien" << endl;
+    cout << "7. Thoat khoi chuong trinh" << endl;
     cout<<"Chon lua chon: ";
 }
 
