@@ -33,6 +33,7 @@ class SubjectTable{
         void showSubject();
         void readData();
         void sortByID();
+        void changeGiaoVien();
         void sortByName();
         void setName(string _Name){
             Name = _Name;
@@ -74,8 +75,6 @@ class SubjectTable{
         string getCourseID(){
             return CourseID;
         }
-        
-
         void setLink(int i){
             linkToTeacher = i;
         }
@@ -87,8 +86,7 @@ class SubjectTable{
         }
         bool getStatus(){
             return status;
-        }
-        
+        }     
 };
 
 vector<SubjectTable> listSubject;
