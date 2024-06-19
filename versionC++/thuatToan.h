@@ -23,6 +23,7 @@ nên là yên tâm nó bao trọn 100% các trường hợp có năng lực và 
 LƯU Ý: THUẬT TOÁN SẼ CẦN PHẢI CHẠY LẠI ĐỂ TỐI ƯU NẾU CÓ SỰ TINH CHỈNH VỀ CÁC DỮ LIỆU GIÁO VIÊN VÀ MÔN HỌC
 */
 
+#include <iomanip>
 #include<iostream>
 #include"subject.h"
 #include"giaovien.h"
@@ -30,6 +31,7 @@ LƯU Ý: THUẬT TOÁN SẼ CẦN PHẢI CHẠY LẠI ĐỂ TỐI ƯU NẾU CÓ 
 #include<vector>
 #include<sstream>
 #include<fstream>
+
 using namespace std;
 int compare(string s){
      /*
@@ -74,7 +76,6 @@ bool checkFree(Teacher a, SubjectTable b){
           _start = compare(cut1);
           _end = compare(cut2) - 1;
           _day = convertStringToInt(b.getDayOfWeek());
-          cout << _start << " " << _end << " " << _day << endl;
           if(a.checkBusy(_start, _end, _day)){
                a.setBusy(_start, _end, _day);
                return true;
@@ -100,4 +101,153 @@ void advancedSort(Teacher gv, SubjectTable sb){
                }
           }
      }
+}
+void ShowFullSchedule(Teacher gv, SubjectTable sb) //Xuat ra tat ca thoi khoa bieu
+{
+    cout<<"+----------+--------------+----------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
+    cout<<"|"<<" Ma lop   "<<"|"<<setw(6)<<" Ma mon hoc"<<setw(4)<<"|"<<"Ten mon hoc"<<setw(47)<<"|   Thu    |"<<"      Thoi gian       "<<"|"<<" Dia diem hoc        "<<"|"<<"     Ten giao vien     "<<"|"<<endl;
+    for(int i=0; i<listSubject.size(); i++){
+        cout<<"|"<<listSubject[i].getID()<<setw(6)<<"| "<<listSubject[i].getCourseID()<<setw(14-listSubject[i].getCourseID().size())<<"|"<<listSubject[i].getName()<<setw(47-listSubject[i].getName().size())<<"|"<<setw(5)<<listSubject[i].getDayOfWeek()<<setw(6)<<"|"<<setw(15)<<listSubject[i].getTime()<<setw(8)<<"|"<<setw(7)<<listSubject[i].getPlace()<<setw(15)<<"|"<<listSubject[i].getTeacherName()<<setw(24-listSubject[i].getTeacherName().size())<<"|"<<endl;
+    }
+	cout<<"+----------+--------------+----------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
+}
+
+void ShowWithTeacherName(Teacher gv, SubjectTable sb) //Xuat ra theo lua chon ten giao vien 
+{
+    int choice;
+    cout<<"Danh sach giao vien: "<<endl;
+    for (int i = 0; i < listTeacher.size(); i++){
+        cout<<i<<"."<<listTeacher[i].getName()<<endl;
+    }
+    cout<<"Chon giao vien: "<<endl;
+    
+    cin>>choice;
+    cout<<"+----------+--------------+----------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
+    cout<<"|"<<" Ma lop   "<<"|"<<setw(6)<<" Ma mon hoc"<<setw(4)<<"|"<<"Ten mon hoc"<<setw(47)<<"|   Thu    |"<<"      Thoi gian       "<<"|"<<" Dia diem hoc        "<<"|"<<"     Ten giao vien     "<<"|"<<endl;
+    cout<<"+----------+--------------+----------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
+    for(int i=0; i<listSubject.size(); i++){
+        if(listSubject[i].getTeacherName() == listTeacher[choice].getName()){
+    
+        cout<<"|"<<listSubject[i].getID()<<setw(6)<<"| "<<listSubject[i].getCourseID()<<setw(14-listSubject[i].getCourseID().size())<<"|"<<listSubject[i].getName()<<setw(47-listSubject[i].getName().size())<<"|"<<setw(5)<<listSubject[i].getDayOfWeek()<<setw(6)<<"|"<<setw(15)<<listSubject[i].getTime()<<setw(8)<<"|"<<setw(7)<<listSubject[i].getPlace()<<setw(15)<<"|"<<listSubject[i].getTeacherName()<<setw(24-listSubject[i].getTeacherName().size())<<"|"<<endl;
+	
+        }
+    
+        }    
+        cout<<"+----------+--------------+----------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
+    }
+
+
+
+void ShowWithDayOfWeek(Teacher gv, SubjectTable sb) //Xuat ra theo lua chon thu{
+    {
+    string choice;
+    cout<<"Chon ngay trong tuan: "<<endl;
+    cin>>choice;
+    cout<<"+----------+--------------+----------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
+    cout<<"|"<<" Ma lop   "<<"|"<<setw(6)<<" Ma mon hoc"<<setw(4)<<"|"<<"Ten mon hoc"<<setw(47)<<"|   Thu    |"<<"      Thoi gian       "<<"|"<<" Dia diem hoc        "<<"|"<<"     Ten giao vien     "<<"|"<<endl;
+    cout<<"+----------+--------------+----------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
+    for(int i=0; i<listSubject.size(); i++){
+        if(listSubject[i].getDayOfWeek() == choice){
+    
+        cout<<"|"<<listSubject[i].getID()<<setw(6)<<"| "<<listSubject[i].getCourseID()<<setw(14-listSubject[i].getCourseID().size())<<"|"<<listSubject[i].getName()<<setw(47-listSubject[i].getName().size())<<"|"<<setw(5)<<listSubject[i].getDayOfWeek()<<setw(6)<<"|"<<setw(15)<<listSubject[i].getTime()<<setw(8)<<"|"<<setw(7)<<listSubject[i].getPlace()<<setw(15)<<"|"<<listSubject[i].getTeacherName()<<setw(24-listSubject[i].getTeacherName().size())<<"|"<<endl;
+	
+        }
+    
+        }    
+        cout<<"+----------+--------------+---------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
+    }
+
+
+void ShowWithCourseID(Teacher gv, SubjectTable sb) //Xuat ra theo lua chon ma hoc phan
+{
+    cout<<"Nhap vao ma hoc phan: "<<endl;
+    string courseID;
+    cin>>courseID;
+    
+    cout<<"+----------+--------------+----------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
+    cout<<"|"<<" Ma lop   "<<"|"<<setw(6)<<" Ma mon hoc"<<setw(4)<<"|"<<"Ten mon hoc"<<setw(47)<<"|   Thu    |"<<"      Thoi gian       "<<"|"<<" Dia diem hoc        "<<"|"<<"     Ten giao vien     "<<"|"<<endl;
+    cout<<"+----------+--------------+----------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
+    for(int i=0; i<listSubject.size(); i++){
+        if(listSubject[i].getID() == courseID){
+            cout<<"|"<<listSubject[i].getID()<<setw(6)<<"| "<<listSubject[i].getCourseID()<<setw(14-listSubject[i].getCourseID().size())<<"|"<<listSubject[i].getName()<<setw(46-listSubject[i].getName().size())<<"|"<<setw(5)<<listSubject[i].getDayOfWeek()<<setw(6)<<"|"<<setw(15)<<listSubject[i].getTime()<<setw(8)<<"|"<<setw(7)<<listSubject[i].getPlace()<<setw(15)<<"|"<<listSubject[i].getTeacherName()<<setw(24-listSubject[i].getTeacherName().size())<<"|"<<endl;
+        }
+    }
+    cout<<"+----------+--------------+----------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
+  
+}
+
+void show(){
+     cout<<"PHAN CONG GIAO VIEN"<<endl;
+    cout<<"1. Xem toan bo thoi khoa bieu"<<endl;
+    cout<<"2. Xem theo ten giao vien"<<endl;
+    cout<<"3. Xem theo ngay trong tuan"<<endl;
+    cout<<"4. Xem theo ma hoc phan"<<endl;
+    cout << "5. Tien hanh sua doi thong tin mon hoc" << endl;
+    cout << "6. Thoat khoi chuong trinh" << endl;
+    cout<<"Chon lua chon: ";
+}
+
+void showSubjectChoice(){
+    cout << "1. Tien hanh them mon hoc" << endl;
+    cout << "2. Tien hanh xoa mon hoc" << endl;
+    cout << "3. Tien hanh sua mon hoc" << endl;
+    cout << "4. Tien hanh tim kiem mon hoc" << endl;
+    cout << "5. Tien hanh sap xep mon hoc theo ID" << endl;
+    cout << "6. Tien hanh sap xep mon hoc theo ten" << endl;
+    cout << "7. Tien hanh thay doi giao vien day mon hoc" << endl;
+    cout << "8. Them giao vien cho mon chua duoc xep" << endl;
+    cout << "9. Thoat tien trinh sua mon hoc" << endl;
+}
+bool suadoithongtinmonhoc(int choice, SubjectTable sb){
+    if(choice == 1){
+        cout << "Tien hanh them mon hoc:" << endl;
+        sb.addSubject();
+        return true;
+    } else if(choice == 2){
+        cout << "Tien hanh xoa mon hoc:" << endl;
+        sb.delSubject();
+        return true;
+    } else if(choice == 3){
+        cout << "Tien hanh sua mon hoc:" << endl;
+        sb.editSubject();
+        return true;
+    } else if(choice == 4){
+        cout << "Tien hanh tim kiem mon hoc:" << endl;
+        sb.searchSubject();
+        return true;
+    } else if(choice ==5){
+        cout << "Tien hanh sap xep mon hoc theo ID:" << endl;
+        sb.sortByID();
+        return true;
+    } else if(choice == 6){
+        cout << "Tien hanh sap xep mon hoc theo ten:" << endl;
+        sb.sortByName();
+        return true;
+    } else if(choice == 7){
+        cout << "Tien hanh thay doi giao vien day mon hoc:" << endl;
+        int newTeacher, subjectPos;
+        cout << "Nhap vi tri mon hoc can thay doi giao vien: ";
+        cin >> subjectPos;
+        cout << "Nhap vi tri giao vien moi: ";
+        cin >> newTeacher;
+        listSubject[subjectPos].setLink(newTeacher);
+        return true;
+    } else if(choice == 9){
+        cout << "Thoat tien trinh sua mon hoc";
+        return false;
+    } else if(choice == 8){
+         for (int i = 0; i < listSubject.size(); i++){
+               if(listSubject[i].getLink() == -1){
+                    cout << "Nhap chi so cua giao vien can them vao ";
+                    int newTeacher;
+                    cin >> newTeacher;
+                    listSubject[i].setLink(newTeacher);
+               }
+         }
+         return true;
+    } else {
+        cout << "LOI!!" << endl;
+        cout<<"Xin moi nhap lai lua chon"<<endl;
+        return true;
+    }
 }
