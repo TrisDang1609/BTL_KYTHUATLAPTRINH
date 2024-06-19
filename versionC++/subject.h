@@ -32,7 +32,6 @@ class SubjectTable{
         void searchSubject();
         void showSubject();
         void readData();
-        void writeData();
         void sortByID();
         void sortByName();
         void setName(string _Name){
@@ -126,4 +125,91 @@ void SubjectTable::showSubject(){
 	}
 	printf("+----------+--------------+----------------------------------------------------+----------+----------------------+--------------------+\n");
 }
+void SubjectTable::addSubject(){
+    cout << "Nhap thong tin cua mon hoc moi theo form duoi day:" << endl;
+    string _IDClass, _CourseID, _Name, _DayOfWeek, _Time, _Place, _TeacherName;
+    cout << "Nhap ma lop: ";
+    cin.ignore();
+    getline(cin, _IDClass);
+    cout << "Nhap ma hoc phan: ";
+    getline(cin, _CourseID);
+    cout << "Nhap ten mon hoc: ";
+    getline(cin, _Name);
+    cout << "Nhap thu: ";
+    getline(cin, _DayOfWeek);
+    cout << "Nhap thoi gian: ";
+    getline(cin, _Time);
+    cout << "Nhap dia diem hoc: ";
+    getline(cin, _Place);
+    cout << "Nhap ten giao vien: ";
+    getline(cin, _TeacherName);
+    listSubject.push_back(SubjectTable(_IDClass, _CourseID, _Name, _DayOfWeek, _Time, _Place,_TeacherName));
+    cout << "Them mon hoc thanh cong!" << endl;
+}
+void SubjectTable::delSubject(){
+    int delSubjectPos;
+    cout << "Nhap vi tri mon hoc can xoa: ";
+    cin >> delSubjectPos;
+    listSubject.erase(listSubject.begin() + delSubjectPos);
+    cout << "Xoa mon hoc thanh cong!" << endl;
+}
+void SubjectTable::editSubject(){
+    cout << "Nhap vi tri mon hoc can sua: ";
+    int editSubjectPos;
+    cin >> editSubjectPos;
+    cout << "Nhap thong tin moi cua mon hoc theo form duoi day:" << endl;
+    string _IDClass, _CourseID, _Name, _DayOfWeek, _Time, _Place, _TeacherName;
+    cout << "Nhap ma lop: ";
+    cin.ignore();
+    getline(cin, _IDClass);
+    cout << "Nhap ma hoc phan: ";
+    getline(cin, _CourseID);
+    cout << "Nhap ten mon hoc: ";
+    getline(cin, _Name);
+    cout << "Nhap thu: ";
+    getline(cin, _DayOfWeek);
+    cout << "Nhap thoi gian: ";
+    getline(cin, _Time);
+    cout << "Nhap dia diem hoc: ";
+    getline(cin, _Place);
+    cout << "Nhap ten giao vien: ";
+    getline(cin, _TeacherName);
+    listSubject[editSubjectPos].IDClass = _IDClass;
+    listSubject[editSubjectPos].CourseID = _CourseID;
+    listSubject[editSubjectPos].Name = _Name;
+    listSubject[editSubjectPos].DayOfWeek = _DayOfWeek;
+    listSubject[editSubjectPos].Time = _Time;
+    listSubject[editSubjectPos].Place = _Place;
+    listSubject[editSubjectPos].TeacherName = _TeacherName;
+    cout << "Sua mon hoc thanh cong!" << endl;
+}
+void SubjectTable::searchSubject(){
+    cout << "Nhap ten mon hoc can tim: ";
+    string searchName;
+    cin.ignore();
+    getline(cin, searchName);
+    cout << "Ket qua tim kiem: " << endl;
+    printf("+----------+--------------+----------------------------------------------------+----------+----------------------+--------------------+\n");
+    printf("| %-8s | %-12s | %-50s | %-8s | %-20s | %-18s |\n", "Ma lop", "Ma hoc phan", "Ten mon hoc", "Thu", "Thoi gian", "Dia diem hoc");
+    printf("+----------+--------------+----------------------------------------------------+----------+----------------------+--------------------+\n");
+    for(int i=0; i<listSubject.size(); i++){
+        if(listSubject[i].Name.find(searchName) != string::npos){
+            printf("| %-8s | %-12s | %-50s | %-8s | %-20s | %-18s | %-18s |\n", listSubject[i].IDClass.c_str(), listSubject[i].CourseID.c_str(), listSubject[i].Name.c_str(), listSubject[i].DayOfWeek.c_str(), listSubject[i].Time.c_str(), listSubject[i].Place.c_str(),listSubject[i].TeacherName.c_str());
+        }
+    }
+    printf("+----------+--------------+----------------------------------------------------+----------+----------------------+--------------------+\n");
+}
+void SubjectTable::sortByID(){
+    sort(listSubject.begin(), listSubject.end(), [](const SubjectTable &a, const SubjectTable &b) { // hàm lambda 
+        return a.IDClass < b.IDClass;
+    });
+    cout << "Sap xep thanh cong!" << endl;
+}
+void SubjectTable::sortByName(){
+    sort(listSubject.begin(), listSubject.end(), [](const SubjectTable &a, const SubjectTable &b) { // hàm lambda 
+        return a.Name < b.Name;
+    });
+    cout << "Sap xep thanh cong!" << endl;
+}
+
 #endif
