@@ -32,7 +32,7 @@ int main(){
         else if(choice == 4){
             ShowWithCourseID(gv, sb);
         }
-        else if(choice == 6){
+        else if(choice == 7){
             break;
         }
         else if(choice == 5){
@@ -44,7 +44,7 @@ int main(){
                 if(!suadoithongtinmonhoc(choice1, sb)) break;;
             }
         }
-        else if(choice == 7){
+        else if(choice == 6){
             cout << "Tien hanh sua duoi thong tin giao vien" << endl;
             while(true){
                 showTeacherChoice();
