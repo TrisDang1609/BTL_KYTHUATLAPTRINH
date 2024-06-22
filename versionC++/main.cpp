@@ -32,7 +32,7 @@ int main(){
         else if(choice == 4){
             ShowWithCourseID(gv, sb);
         }
-        else if(choice == 7){
+        else if(choice == 8){
             break;
         }
         else if(choice == 5){
@@ -53,11 +53,15 @@ int main(){
                 if(!suadoithongtingiaovien(choice1, gv)) break;;
             }
         }
-        
+        else if(choice == 7){
+            cout << "Du lieu da duoc luu vao TKB_new.csv" << endl;
+            sb.writeData();
+        }
         else{
             cout << "LOI!!" << endl;
             cout<<"Xin moi nhap lai lua chon"<<endl;
         }
     }
+
 }
 
