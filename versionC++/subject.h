@@ -33,7 +33,8 @@ class SubjectTable{
         void showSubject();
         void readData();
         void sortByID();
-        void changeGiaoVien();
+        void writeData();
+        void changeGiaoVien(int &subjectPos, int &newTeacher);
         void sortByName();
         void setName(string _Name){
             Name = _Name;
@@ -53,7 +54,7 @@ class SubjectTable{
         void setTeacherName(string _TeacherName){
             TeacherName = _TeacherName;
         }
-        
+        void setNewTeacher(int subjectPos, int newTeacher);
         string getID(){
             return IDClass;
         }
@@ -217,4 +218,83 @@ void SubjectTable::sortByName(){
     cout << "Sap xep thanh cong!" << endl;
 }
 
+void SubjectTable::changeGiaoVien(int &subjectPos, int &newTeacher){
+    listSubject[subjectPos].setLink(newTeacher);
+}
+void showSubjectChoice(){
+    cout << "1. Tien hanh them mon hoc" << endl;
+    cout << "2. Tien hanh xoa mon hoc" << endl;
+    cout << "3. Tien hanh sua mon hoc" << endl;
+    cout << "4. Tien hanh tim kiem mon hoc" << endl;
+    cout << "5. Tien hanh sap xep mon hoc theo ID" << endl;
+    cout << "6. Tien hanh sap xep mon hoc theo ten" << endl;
+    cout << "7. Tien hanh thay doi giao vien day mon hoc" << endl;
+    cout << "8. Them giao vien cho mon chua duoc xep" << endl;
+    cout << "9. Thoat tien trinh sua mon hoc" << endl;
+}
+bool suadoithongtinmonhoc(int choice, SubjectTable &sb){
+    if(choice == 1){
+        cout << "Tien hanh them mon hoc:" << endl;
+        sb.addSubject();
+        return true;
+    } else if(choice == 2){
+        cout << "Tien hanh xoa mon hoc:" << endl;
+        sb.delSubject();
+        return true;
+    } else if(choice == 3){
+        cout << "Tien hanh sua mon hoc:" << endl;
+        sb.editSubject();
+        return true;
+    } else if(choice == 4){
+        cout << "Tien hanh tim kiem mon hoc:" << endl;
+        sb.searchSubject();
+        return true;
+    } else if(choice ==5){
+        cout << "Tien hanh sap xep mon hoc theo ID:" << endl;
+        sb.sortByID();
+        return true;
+    } else if(choice == 6){
+        cout << "Tien hanh sap xep mon hoc theo ten:" << endl;
+        sb.sortByName();
+        return true;
+    } else if(choice == 7){
+        cout << "Tien hanh thay doi giao vien day mon hoc:" << endl;
+        int newTeacher, subjectPos;
+        cout << "Nhap vi tri mon hoc can thay doi giao vien: ";
+        cin >> subjectPos;
+        cout << "Nhap vi tri giao vien moi: ";
+        cin >> newTeacher;
+        sb.changeGiaoVien(subjectPos, newTeacher);
+        return true;
+    } else if(choice == 9){
+        cout << "Thoat tien trinh sua mon hoc";
+        return false;
+    } else if(choice == 8){
+         for (int i = 0; i < listSubject.size(); i++){
+               if(listSubject[i].getLink() == -1){
+                    cout << "Nhap chi so cua giao vien can them vao ";
+                    int newTeacher;
+                    cin >> newTeacher;
+                    listSubject[i].setLink(newTeacher);
+               }
+         }
+         return true;
+    } else {
+        cout << "LOI!!" << endl;
+        cout<<"Xin moi nhap lai lua chon"<<endl;
+        return true;
+    }
+}
+void SubjectTable :: writeData(){
+    ofstream file("TKB_NEW.csv");
+    if (!file.is_open()) {
+        cerr << "Không thể mở tệp CSV." << endl;
+        return;
+    }
+    file << "Ma lop, Ma hoc phan, Ten mon hoc, Thu, Thoi gian, Dia diem hoc, Ten giao vien" << endl;
+    for (int i = 0; i < listSubject.size(); i++) {
+        file << listSubject[i].IDClass << "," << listSubject[i].CourseID << "," << listSubject[i].Name << "," << listSubject[i].DayOfWeek << "," << listSubject[i].Time << "," << listSubject[i].Place << "," << listSubject[i].TeacherName << endl;
+    }
+    file.close();
+}
 #endif
