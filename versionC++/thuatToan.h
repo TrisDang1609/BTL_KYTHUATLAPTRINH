@@ -102,7 +102,7 @@ void advancedSort(Teacher gv, SubjectTable sb){
           }
      }
 }
-void ShowFullSchedule(Teacher gv, SubjectTable sb) //Xuat ra tat ca thoi khoa bieu
+void ShowFullSchedule(Teacher &gv, SubjectTable &sb) //Xuat ra tat ca thoi khoa bieu
 {
     cout<<"+----------+--------------+----------------------------------------------+----------+----------------------+---------------------+-----------------------+\n";
     cout<<"|"<<" Ma lop   "<<"|"<<setw(6)<<" Ma mon hoc"<<setw(4)<<"|"<<"Ten mon hoc"<<setw(47)<<"|   Thu    |"<<"      Thoi gian       "<<"|"<<" Dia diem hoc        "<<"|"<<"     Ten giao vien     "<<"|"<<endl;
@@ -184,74 +184,9 @@ void show(){
     cout<<"4. Xem theo ma hoc phan"<<endl;
     cout << "5. Tien hanh sua doi thong tin mon hoc" << endl;
     cout << "6. Tien hanh sua doi thong tin giao vien" << endl;
-    cout << "7. Thoat khoi chuong trinh" << endl;
+    cout << "7. Tien hanh luu sang file moi" << endl;
+    cout << "8. Thoat khoi chuong trinh" << endl;
     cout<<"Chon lua chon: ";
-}
-
-
-void showSubjectChoice(){
-    cout << "1. Tien hanh them mon hoc" << endl;
-    cout << "2. Tien hanh xoa mon hoc" << endl;
-    cout << "3. Tien hanh sua mon hoc" << endl;
-    cout << "4. Tien hanh tim kiem mon hoc" << endl;
-    cout << "5. Tien hanh sap xep mon hoc theo ID" << endl;
-    cout << "6. Tien hanh sap xep mon hoc theo ten" << endl;
-    cout << "7. Tien hanh thay doi giao vien day mon hoc" << endl;
-    cout << "8. Them giao vien cho mon chua duoc xep" << endl;
-    cout << "9. Thoat tien trinh sua mon hoc" << endl;
-}
-bool suadoithongtinmonhoc(int choice, SubjectTable sb){
-    if(choice == 1){
-        cout << "Tien hanh them mon hoc:" << endl;
-        sb.addSubject();
-        return true;
-    } else if(choice == 2){
-        cout << "Tien hanh xoa mon hoc:" << endl;
-        sb.delSubject();
-        return true;
-    } else if(choice == 3){
-        cout << "Tien hanh sua mon hoc:" << endl;
-        sb.editSubject();
-        return true;
-    } else if(choice == 4){
-        cout << "Tien hanh tim kiem mon hoc:" << endl;
-        sb.searchSubject();
-        return true;
-    } else if(choice ==5){
-        cout << "Tien hanh sap xep mon hoc theo ID:" << endl;
-        sb.sortByID();
-        return true;
-    } else if(choice == 6){
-        cout << "Tien hanh sap xep mon hoc theo ten:" << endl;
-        sb.sortByName();
-        return true;
-    } else if(choice == 7){
-        cout << "Tien hanh thay doi giao vien day mon hoc:" << endl;
-        int newTeacher, subjectPos;
-        cout << "Nhap vi tri mon hoc can thay doi giao vien: ";
-        cin >> subjectPos;
-        cout << "Nhap vi tri giao vien moi: ";
-        cin >> newTeacher;
-        listSubject[subjectPos].setLink(newTeacher);
-        return true;
-    } else if(choice == 9){
-        cout << "Thoat tien trinh sua mon hoc";
-        return false;
-    } else if(choice == 8){
-         for (int i = 0; i < listSubject.size(); i++){
-               if(listSubject[i].getLink() == -1){
-                    cout << "Nhap chi so cua giao vien can them vao ";
-                    int newTeacher;
-                    cin >> newTeacher;
-                    listSubject[i].setLink(newTeacher);
-               }
-         }
-         return true;
-    } else {
-        cout << "LOI!!" << endl;
-        cout<<"Xin moi nhap lai lua chon"<<endl;
-        return true;
-    }
 }
 
 void showTeacherChoice(){
